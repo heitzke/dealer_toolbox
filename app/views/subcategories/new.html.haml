@@ -1,0 +1,9 @@
+%h2 New Subcategory
+= form_for @subcategory do |f|
+  = f.hidden_field :category_id, :value => @category.id
+  = f.label :name
+  = f.text_field :name
+  = f.label :description
+  = f.text_field :description
+  = f.submit
+

@@ -1,0 +1,18 @@
+%h2= @category.name
+/%p= @category.description
+%p= link_to 'Home', '/'
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+  %tbody
+    - @category.subcategories.each do |subcategory|
+      %tr
+        %td= link_to subcategory.name, category_subcategory_path(@category, subcategory)
+        %td= subcategory.description
+
+= link_to 'New Subcategory', new_category_subcategory_path(@category)
+
+
