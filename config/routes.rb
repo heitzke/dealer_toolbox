@@ -19,7 +19,7 @@ DealerToolbox::Application.routes.draw do
 
   resource  :account, :controller => "users"
   resources :users
-  resources :user_session
+  resource :user_session
   resources :categories
   resources :subcategories
   resources :file_attachments
