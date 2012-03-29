@@ -9,7 +9,9 @@
       <%- categories.each do |category| %>
         <%= link_to category.name, category_path(category)%> |
       <%end%>
-      <%= link_to "Users", users_path %> |
+      <% if current_user.is_admin?%>
+        <%= link_to "Users", users_path %> |
+      <%end%>
       <%= link_to "Logout", :logout %>
     <% else %>
       <%= link_to "Register", new_user_path %> |

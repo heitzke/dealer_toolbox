@@ -15,7 +15,7 @@ class SubcategoriesController < ApplicationController
     @subcategory = Subcategory.new(params[:subcategory])
     if @subcategory.save
       flash[:notice] = 'Saved Subcategory'
-      redirect_to category_subcategories_path(@subcategory.category)
+      redirect_to category_subcategory_path(@subcategory.category, @subcategory)
     else
       flash[:error] = 'Subcategory Not Saved'
       render :action => 'new'
