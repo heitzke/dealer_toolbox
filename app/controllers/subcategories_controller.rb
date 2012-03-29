@@ -1,4 +1,6 @@
 class SubcategoriesController < ApplicationController
+  before_filter :require_user
+  before_filter :require_admin, :only => [:new, :create, :update]
 
   def index
     @subcategories = Subcategory.all
@@ -13,7 +15,7 @@ class SubcategoriesController < ApplicationController
     @subcategory = Subcategory.new(params[:subcategory])
     if @subcategory.save
       flash[:notice] = 'Saved Subcategory'
-      redirect_to category_subcategories_path(@subcategory.category, @subcategory)
+      redirect_to category_subcategories_path(@subcategory.category)
     else
       flash[:error] = 'Subcategory Not Saved'
       render :action => 'new'

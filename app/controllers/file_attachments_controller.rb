@@ -1,4 +1,6 @@
 class FileAttachmentsController < ApplicationController
+  before_filter :require_admin, :only => [:new, :create]
+  before_filter :require_user, :only => [:show]
 
   def new
     @subcategory = Subcategory.find(params[:subcategory_id])

@@ -23,6 +23,14 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def require_admin
+      unless current_user && current_user.is_admin?
+        flash[:notice] = "You must be an admin to access this area!"
+        redirect_to root_path
+        return false
+      end
+    end
+
     def require_no_user
       if current_user
         store_location
@@ -39,5 +47,9 @@ class ApplicationController < ActionController::Base
     def redirect_back_or_default(default)
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
+    end
+
+    def categories
+      Category.all
     end
 end

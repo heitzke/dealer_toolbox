@@ -12,20 +12,24 @@ DealerToolbox::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  resources :categories do
-    resources :subcategories do
-      resources :file_attachments
-    end
-  end
-  match "login"  => "user_sessions#new"
-  match "logout" => "user_sessions#destroy"
+  root :to => 'pages#home'
+  
+  match "login"  => "user_sessions#new",     :as => :login
+  match "logout" => "user_sessions#destroy", :as => :logout
 
-  resource :account, :controller => "users"
+  resource  :account, :controller => "users"
   resources :users
   resources :user_session
   resources :categories
   resources :subcategories
   resources :file_attachments
+
+  resources :categories do
+    resources :subcategories do
+      resources :file_attachments
+    end
+  end
+
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -61,7 +65,6 @@ DealerToolbox::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'categories#index'
 
   # See how all your routes lay out with "rake routes"
 

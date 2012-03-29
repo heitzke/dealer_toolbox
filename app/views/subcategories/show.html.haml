@@ -1,6 +1,4 @@
 %h2= "Subcategory - #{@subcategory.name}"
-/%p= @subcategory.description
-%p= link_to "Category - #{@subcategory.category.name}", category_path(@subcategory.category)
 
 %table
   %thead
@@ -10,6 +8,8 @@
     - @file_attachments.each do |file_attachment|
       %tr
         %td= link_to file_attachment.attachment_file_file_name, file_attachment_path(file_attachment.id)
-
-= link_to t(:new_file), new_category_subcategory_file_attachment_path(@subcategory.category, @subcategory)
+%br
+%br
+- if current_user && current_user.is_admin?
+  = link_to t(:new_file), new_category_subcategory_file_attachment_path(@subcategory.category, @subcategory)
 
