@@ -1,0 +1,13 @@
+<h1>Register</h1>
+
+<% form_for @user, :url => account_path do |f| %>
+  <%= f.label :username %><br />
+  <%= f.text_field :username %><br />
+  <br />
+  <%= f.label :password, f.object.new_record? ? nil : "Change password" %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %><br />
+  <%= f.submit "Register" %>
+<% end %>

@@ -17,7 +17,12 @@ DealerToolbox::Application.routes.draw do
       resources :file_attachments
     end
   end
+  match "login"  => "user_sessions#new"
+  match "logout" => "user_sessions#destroy"
 
+  resource :account, :controller => "users"
+  resources :users
+  resources :user_session
   resources :categories
   resources :subcategories
   resources :file_attachments
