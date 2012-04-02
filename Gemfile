@@ -9,3 +9,10 @@ gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => '
 gem 'rails3-generators'
 gem 'ruby-debug19'
 
+group :assets do
+  gem 'sass-rails' # if running rails 3.1 or greater
+  gem 'compass-rails'
+  gem 'compass-bootstrap'
+end
+
+
