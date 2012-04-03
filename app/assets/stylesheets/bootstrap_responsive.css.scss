@@ -587,6 +587,10 @@
   }
 }
 @media (min-width: 1200px) {
+  .fixed_content {
+    width: 965px;
+    margin: 0 auto;
+  }
   .row {
     margin-left: -30px;
     *zoom: 1;
