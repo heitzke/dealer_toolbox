@@ -1,16 +1,18 @@
-%h1 Listing users
+%h2 Listing users
 #notice= notice
-%table
-  %tr
-    %th Email
-    %th
-    %th
-    %th
-  - @users.each do |user|
+%table.table.table-striped.table-bordered
+  %thead
     %tr
-      %td= user.email
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New User', new_user_path
+      %th Email
+      %th
+      %th
+      %th
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= link_to 'Show', user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+
+= link_to 'New User', new_user_path, :class => 'btn'

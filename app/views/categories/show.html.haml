@@ -2,17 +2,9 @@
 .notice
   %p= notice
 
-%table
-  %thead
-    %tr
-      %th Name
-  %tbody
-    - @category.subcategories.each do |subcategory|
-      %tr
-        %td= link_to subcategory.name, category_subcategory_path(@category, subcategory)
-%br
-%br
+- @category.subcategories.each do |subcategory|
+  = link_to subcategory.name, category_subcategory_path(@category, subcategory)
 - if current_user && current_user.is_admin?
-  = link_to 'New Subcategory', new_category_subcategory_path(@category)
+  = link_to 'New File Group', new_category_subcategory_path(@category), :class => 'btn'
 
 

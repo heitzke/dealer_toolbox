@@ -8,25 +8,61 @@ html {
   }
 }
 header {
-  background: url('header_bg.png') repeat-x;
+  background: url('header_bg.png') repeat;
+  .welcome_back {
+    display: inline-block;
+    float: right;
+    margin: 28px 0 0 0;
+    p {
+      color: #d0ad53;
+      display: inline-block;
+      
+    }
+    .logout {
+      @include background-image(linear-gradient(#76b1d7, #4d8fba, #215c82 ));
+      border: 1px solid #3691cc;
+      color:#fff;
+      display: inline-block;
+      margin: 0 0 0 20px;
+    }
+  }
   h1.logo {
     display: inline-block;
     background: url('logo.png') no-repeat;
     text-indent: -9999em;
     width: 184px;
     height: 57px;
+    margin: 15px 0;
   }
   h2 {
     display: inline-block;
     color: #fff;
+    font-family: 'arial', 'helvetica', sans-serif;
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin: 0 0 0 8px;
   }
   .navbar {
     margin: 0;
+    @include box-shadow (0 0 4px #000);
     .navbar-inner {
       @include background-image(linear-gradient(#525252, #444343)); 
+      height: 34px;
       border-radius: 0;
       a {
         color: #fff;
+        font-size: 1.2em;
+        display: inline-block;
+        padding: 6px 10px 10px 10px;
+        font-family: 'arial', 'helvetica', sans-serif;
+        &:hover {
+          background: #ededed;
+          text-decoration: none;
+          color: #434242;
+        }
+      }
+      .admin_link {
+        float: right;
       }
     }
   }
@@ -35,6 +71,13 @@ header {
   @include background-image(linear-gradient(#909090, #3f3f3f));
   .texture {
     background: url('bg_texture.png') repeat;
+    height: 100%;
+    padding: 20px 0;
+  }
+  h2 {
+    color: #fff;
+    @include text-shadow(1px 1px 1px #555);
+    font-weight: normal;
   }
 }
 footer {
@@ -42,5 +85,6 @@ footer {
   width: 100%;
   p {
     color: #fff;
+    padding: 10px 0 0 0;
   }
 }
