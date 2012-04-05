@@ -1,10 +1,10 @@
+- if current_user && current_user.is_admin?
+  = link_to 'New Folder', new_category_subcategory_path(@category), :class => 'btn btn-info right'
 %h2= @category.name
 .notice
   %p= notice
 
 - @category.subcategories.each do |subcategory|
-  = link_to subcategory.name, category_subcategory_path(@category, subcategory)
-- if current_user && current_user.is_admin?
-  = link_to 'New File Group', new_category_subcategory_path(@category), :class => 'btn'
-
-
+  .subcategory_wrap
+    = link_to image_tag('folder.png'), category_subcategory_path(@category, subcategory)
+    = link_to subcategory.name, category_subcategory_path(@category, subcategory)

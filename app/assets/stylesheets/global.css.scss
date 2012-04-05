@@ -8,6 +8,7 @@ html {
   }
 }
 header {
+  height: 122px;
   background: url('header_bg.png') repeat;
   .welcome_back {
     display: inline-block;
@@ -28,11 +29,14 @@ header {
   }
   h1.logo {
     display: inline-block;
-    background: url('logo.png') no-repeat;
-    text-indent: -9999em;
-    width: 184px;
-    height: 57px;
-    margin: 15px 0;
+    a {
+      background: url('logo.png') no-repeat;
+      text-indent: -9999em;
+      width: 184px;
+      height: 57px;
+      margin: 15px 0;
+      display: inline-block;
+    }
   }
   h2 {
     display: inline-block;
@@ -46,17 +50,20 @@ header {
     margin: 0;
     @include box-shadow (0 0 4px #000);
     .navbar-inner {
-      @include background-image(linear-gradient(#525252, #444343)); 
+      border-top: 2px solid #323232;
+      @include background-image(linear-gradient(#444343, #525252)); 
       height: 34px;
       border-radius: 0;
       a {
         color: #fff;
         font-size: 1.2em;
         display: inline-block;
-        padding: 6px 10px 10px 10px;
+        padding: 6px 10px 9px 10px;
         font-family: 'arial', 'helvetica', sans-serif;
         &:hover {
-          background: #ededed;
+          @include background-image(linear-gradient(#eee, #fff)); 
+          
+          background-color: #ededed;
           text-decoration: none;
           color: #434242;
         }
@@ -64,6 +71,28 @@ header {
       .admin_link {
         float: right;
       }
+    }
+  }
+}
+.right {
+  float: right;
+}
+.subcategory_wrap {
+  width: 125px;
+  display: inline-block;
+  text-align: center;
+  background: #888;
+  padding: 15px 0;
+  margin: 15px 30px 10px 0;
+  @include box-shadow(3px 3px 3px #444);
+
+  a {
+    color: #fff;
+    font-size: 1.2em;
+    display: block;
+    img {
+      width: 84px;
+      margin: 0 auto;
     }
   }
 }
@@ -75,13 +104,17 @@ header {
     padding: 20px 0;
   }
   h2 {
+    font-size: 2.1em;
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
     color: #fff;
     @include text-shadow(1px 1px 1px #555);
     font-weight: normal;
   }
 }
 footer {
-  background: #171717;
+  @include background-image(linear-gradient(#222, #171717)); 
+  background-color: #171717;
   width: 100%;
   p {
     color: #fff;

@@ -1,8 +1,8 @@
 %h2 Register
-= form_for @user, :url => account_path do |f|
+= form_for @user, :class => 'form-inline', :url => account_path do |f| 1
   - if @user.errors.any?
     #error_explanation
-      %h2
+      %h5
         = pluralize(@user.errors.count, "error")
         prohibited this user from being saved:
       %ul

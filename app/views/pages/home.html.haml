@@ -1,8 +1,6 @@
 #notice= notice
+- if current_user && current_user.is_admin?
+  = link_to 'New Category', new_category_path, :class => 'btn btn-info right'
 
 %h2 Home
-
-- if current_user && current_user.is_admin?
-  = link_to 'New Category', new_category_path
-
 
