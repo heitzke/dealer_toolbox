@@ -1,6 +1,11 @@
+- if current_user && current_user.is_admin?
+  = link_to t(:upload_file), new_category_subcategory_file_attachment_path(@subcategory.category, @subcategory), :class => 'btn btn-info right'
+
 %h2= "Subcategory - #{@subcategory.name}"
-.notice
-  %p= notice
+- if notice.present?
+  .alert.alert-info.alert-block
+    <a class="close" data-dismiss="alert">×</a>
+    %p= notice
 
 
 %table.table.table-striped.table-bordered
@@ -11,8 +16,4 @@
     - @file_attachments.each do |file_attachment|
       %tr
         %td= link_to file_attachment.attachment_file_file_name, file_attachment_path(file_attachment.id)
-%br
-%br
-- if current_user && current_user.is_admin?
-  = link_to t(:new_file), new_category_subcategory_file_attachment_path(@subcategory.category, @subcategory)
 

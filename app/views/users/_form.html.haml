@@ -1,11 +1,21 @@
-= form.label :username
-= form.text_field :username
-
-= form.label :password, form.object.new_record? ? nil : "Change password"
-= form.password_field :password
-
-= form.label :password_confirmation
-= form.password_field :password_confirmation
-
-= form.label :admin
-= form.check_box :admin
+%fieldset
+  .control-group
+    = form.label :username, :class => 'control-label'
+    .controls
+      = form.text_field :username
+  .control-group
+    = form.label :email, :class => 'control-label'
+    .controls
+      = form.text_field :email
+  .control-group
+    = form.label :password, form.object.new_record? ? nil : "Change password", :class => 'control-label'
+    .controls
+      = form.password_field :password
+  .control-group
+    = form.label :password_confirmation, :class => 'control-label'
+    .controls
+      = form.password_field :password_confirmation
+  .control-group
+    = form.label :admin, :class => 'control-label'
+    .controls
+      = form.check_box :admin

@@ -1,3 +1,4 @@
+= link_to 'New User', new_user_path, :class => 'btn btn-info right'
 %h2 Listing users
 #notice= notice
 %table.table.table-striped.table-bordered
@@ -11,8 +12,7 @@
     - @users.each do |user|
       %tr
         %td= user.email
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+        %td.centered= link_to 'View', user, :class => 'btn btn-info'
+        %td.centered= link_to 'Edit', edit_user_path(user), :class => 'btn btn-info'
+        %td.centered= link_to 'Remove', user, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger'
 
-= link_to 'New User', new_user_path, :class => 'btn'

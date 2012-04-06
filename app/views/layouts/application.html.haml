@@ -15,7 +15,7 @@
         - if current_user
           .welcome_back
             %p 
-              Welcome back
+              Welcome back = @users.email
             = link_to "Logout", :logout, :class => 'btn btn-info'
       .navbar
         .navbar-inner

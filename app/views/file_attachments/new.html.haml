@@ -1,7 +1,7 @@
 %h2 Upload a File
 
-= form_for @file_attachment, :url => file_attachments_path, :html => { :multipart => true } do |f|
-  = f.file_field :attachment_file
+= form_for @file_attachment, :url => file_attachments_path, :html => { :class => 'well form-inline', :multipart => true } do |f|
+  = f.file_field :attachment_file, :class => 'input-small'
   = f.hidden_field :subcategory_id, :value => @subcategory.id
   = f.submit 'Submit'
 
