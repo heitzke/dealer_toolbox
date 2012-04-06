@@ -14,8 +14,7 @@
           Distributor Toolbox
         - if current_user
           .welcome_back
-            %p 
-              Welcome back = @users.email
+            %p= "Welcome back #{current_user.email}"
             = link_to "Logout", :logout, :class => 'btn btn-info'
       .navbar
         .navbar-inner
@@ -28,7 +27,6 @@
                 - if current_user.is_admin?
                   .admin_link
                     = link_to "Manage Users", users_path
-              = link_to "Login", :login
     .main_content
       .texture
         .fixed_content
