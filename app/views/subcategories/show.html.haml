@@ -12,8 +12,15 @@
   %thead
     %tr
       %th File Name
+      %th File Size
+      %th File Type
+      %th Created Time
   %tbody
     - @file_attachments.each do |file_attachment|
       %tr
         %td= link_to file_attachment.attachment_file_file_name, file_attachment_path(file_attachment.id)
+        %td= link_to file_attachment.attachment_file_file_size, file_attachment_path(file_attachment.id)
+        %td= link_to file_attachment.attachment_file_content_type, file_attachment_path(file_attachment.id)
+        %td= link_to file_attachment.attachment_file_updated_at, file_attachment_path(file_attachment.id)
 
+= will_paginate @file_attachments
