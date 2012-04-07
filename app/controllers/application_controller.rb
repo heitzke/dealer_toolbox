@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper :all
+  before_filter :require_user
   helper_method :current_user_session, :current_user
   #filter_parameter_logging :password, :password_confirmation
   
