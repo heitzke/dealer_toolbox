@@ -1,13 +1,24 @@
 %h2 Login
-= form_for @user_session, :url => user_session_path do |f|
-  #notice= notice
-  = f.label :username
-  = f.text_field :username
-
-  = f.label :password
-  = f.password_field :password
-
-  = f.check_box :remember_me
-  = f.label :remember_me
-
-  = f.submit "Login"
+= form_for @user_session, :html => {:class => 'form-horizontal'}, :url => user_session_path do |f|
+  -if notice.present?
+    .alert.alert-error
+      = notice
+  %fieldset
+    .control-group
+      .control-label
+        = f.label :username
+      .controls
+        = f.text_field :username
+    .control-group
+      .control-label
+        = f.label :password
+      .controls
+        = f.password_field :password
+    .control-group
+      .control-label
+        = f.check_box :remember_me
+      .controls
+        = f.label :remember_me
+    .control-group
+      .controls
+        = f.submit "Login", :class => 'btn btn-info'
