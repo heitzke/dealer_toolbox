@@ -1,7 +1,29 @@
-#notice= notice
+- if notice.present?
+  .alert.alert-success
+    = notice
 - if current_user && current_user.is_admin?
   = link_to 'New Category', new_category_path, :class => 'btn btn-info right'
 
 %h2 Welcome
-= image_tag 'home_1.png'
+.slider_wrap
+  .slider
+    .slide.slide1
+      = image_tag 'home_4.png'
+    .slide.slide2
+      = image_tag 'home_2.png'
+    .slide.slide3
+      = image_tag 'home_3.png'
+.home_content
+  .content_block.about
+    %h3 About
+    %p Scania’s objective is to deliver optimized engines and services, provide the best total operating economy for our customers, and thereby be the leading company in our industry. The foundation is our core values, our focus on methods and the dedicated people of Scania.
+    %p Scania operates in some 100 countries and has 34,000 employees. Of these, 2,400 work with research and development – mainly in Sweden, close to the company’s production units and global haed office. Scania’s corporate purchasing department is supplemented by local procurement offices in Poland, the Czech Republic, the United States and China. Production takes place in Europe and Latin America. In addition, about 20,000 people work in Scania’s independent sales and service organisation.
+  .content_block
+    %h3 Links  
+    
+
+
+
+
+
 

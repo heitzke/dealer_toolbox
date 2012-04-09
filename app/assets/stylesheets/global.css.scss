@@ -42,9 +42,9 @@ header {
     display: inline-block;
     color: #fff;
     font-family: 'arial', 'helvetica', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.4em;
     vertical-align: middle;
-    margin: 0 0 0 8px;
+    margin: 0 0 0 6px;
   }
   .navbar {
     margin: 0;
@@ -140,6 +140,65 @@ form {
     margin: 0;
   }
 }
+.pagination {
+  background: #eee;
+  width: auto;
+  margin: 10px 0 15px 0;
+  padding:0 0 0 0;
+  @include border-radius(5px);
+  @include box-shadow(1px 1px 1px #eee);
+  border:1px solid #ddd;
+  height:auto;
+  display: inline-block;
+  span {
+    background:#eee;
+    border-right:1px solid #ddd;
+    display: inline-block;
+  }
+  a {
+    color:#333;
+    background:#eee;
+    border-right:1px solid #ddd;
+    display: inline-block;
+    text-decoration:none;
+    padding: 3px;
+    
+    &:hover {
+      background:#ddd;
+    }
+  }
+  .current {
+    background:#888;
+    color:#eee;
+    display: inline-block; 
+    padding: 3px;   
+  }
+  .previous_page {
+    display: inline-block;
+    padding: 3px;
+  }
+  .next_page {
+    display: inline-block;
+  }
+}
+.home_content {
+  margin: 15px 0;
+  border-top:1px solid #666;
+  .about {
+    width: 64%;
+    margin: 0 15px 0 0;
+  }
+  .content_block {
+    display: inline-block;
+    vertical-align: top;
+    h3 {
+      color: #fff;
+    }
+    p {
+      color: #eee;
+    }
+  }
+}
 footer {
   @include background-image(linear-gradient(#222, #171717)); 
   background-color: #171717;
@@ -149,3 +208,270 @@ footer {
     padding: 10px 0 0 0;
   }
 }
+
+
+.slider { 
+	height: 200px;
+	background: url('orbit/loading.gif') no-repeat center center;
+	overflow: hidden;
+	img {
+	  float:right;
+	} 
+}
+.slide {
+  .slide-content {
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px;
+    h2 {
+      font-size: 2em;
+      color: #578391;
+      @include text-shadow(1px 1px 1px #fff);
+    }
+  }
+  .slide-image {
+    display: inline-block;
+    vertical-align: top;
+    right: 0;
+    position: absolute;
+  }
+}
+.slide1 {
+  background: #ddd;
+  display:block;
+  height: 300px;
+  width: 100%;
+}
+.slide2, .slide3 {
+  width: 100%;
+  display:block;
+  height: 300px;
+}
+.work_block {
+  height: auto;
+  clear: right;
+  width: 100%;
+  margin: 10px 0 20px 0;
+  h2 {
+    border: none;
+    margin: 0 0 0 0;
+    padding: 12px 10px 7px 10px;
+    color: #578391;
+    font-size: 1.4em;
+    background: #fff;
+    width: 100%;
+    @include box-shadow (1px 1px 1px #ddd);
+    z-index: 5;
+    position: relative;
+  }
+  .work_content {
+    vertical-align: top;
+    display: inline-block;
+    padding: 15px;
+    width: 42%;
+  }
+  .work_image {
+    display: inline-block;
+    right: 0;
+    vertical-align: top;
+    width: 120%;
+    float: right;
+    margin: -51px 0 40px 0;
+    z-index: 1;
+    
+  }
+}
+
+.orbit-wrapper{
+  div.slider-nav span{
+    @include opacity(0);
+    -moz-transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+  }
+  &:hover{
+    div.slider-nav span{
+      @include opacity(1);
+    }
+  }
+}
+
+.slider>img,  
+.slider>div,
+.slider>a { display: none; }
+
+.orbit-bullets {
+  display: none;
+}
+
+/* CONTAINER
+   ================================================== */
+
+div.orbit-wrapper {
+    position: relative; }
+
+div.orbit {
+    position: relative;
+    overflow: hidden }
+
+div.orbit>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none; }
+
+div.orbit>a {
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 0; 
+    display: none; }
+
+.orbit>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+/* TIMER
+   ================================================== */
+
+div.timer {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: .2;
+    cursor: pointer;
+    z-index: 1001; }
+
+span.rotator {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    background: url(orbit/rotator-black.png) no-repeat;
+    z-index: 3; }
+
+span.mask {
+    display: block;
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    overflow: hidden; }
+
+span.rotator.move {
+    left: 0 }
+
+span.mask.move {
+    width: 40px;
+    left: 0;
+    background: url(orbit/timer-black.png) repeat 0 0; }
+
+span.pause {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(orbit/pause-black.png) no-repeat;
+    z-index: 4;
+    opacity: 0; }
+
+span.pause.active {
+    background: url(orbit/pause-black.png) no-repeat 0 -40px }
+
+div.timer:hover span.pause,
+span.pause.active {
+    opacity: 1 }
+
+
+/* CAPTIONS
+   ================================================== */
+
+.orbit-caption {
+    display: none;
+    font-family: "HelveticaNeue", "Helvetica-Neue", Helvetica, Arial, sans-serif; }
+
+.orbit-wrapper .orbit-caption {
+    background: #000;
+    background: rgba(0,0,0,.6);
+    z-index: 1000;
+    color: #fff;
+	text-align: center;
+	padding: 7px 0;
+    font-size: 13px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%; }
+
+
+/* DIRECTIONAL NAV
+   ================================================== */
+
+div.slider-nav {
+    display: block }
+
+div.slider-nav span {
+    width: 78px;
+    height: 100px;
+    text-indent: -9999px;
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    margin-top: -50px;
+    cursor: pointer; }
+
+div.slider-nav span.right {
+    background: url(orbit/right-arrow.png);
+    right: 0; }
+
+div.slider-nav span.left {
+    background: url(orbit/left-arrow.png);
+    left: 0; }
+
+/* BULLET NAV
+   ================================================== */
+
+.orbit-bullets {
+    position: absolute;
+    z-index: 1000;
+    list-style: none;
+    bottom: -40px;
+    left: 50%;
+	margin-left: -50px;
+    padding: 0; }
+
+.orbit-bullets li {
+    float: left;
+    margin-left: 5px;
+    cursor: pointer;
+    color: #999;
+    text-indent: -9999px;
+    background: url(orbit/bullets.jpg) no-repeat 4px 0;
+    width: 13px;
+    height: 12px;
+    overflow: hidden; }
+
+.orbit-bullets li.active {
+    color: #222;
+    background-position: -8px 0; }
+    
+.orbit-bullets li.has-thumb {
+    background: none;
+    width: 100px;
+    height: 75px; }
+
+.orbit-bullets li.active.has-thumb {
+    background-position: 0 0;
+    border-top: 2px solid #000; }
