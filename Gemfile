@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'heroku'
-#gem 'sqlite3','~> 1.3.5'
+gem 'sqlite3','~> 1.3.5'
 gem 'taps'
 gem 'rails', '~> 3.1.0'
 gem 'haml', '~> 3.1.3'
