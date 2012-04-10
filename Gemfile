@@ -15,6 +15,7 @@ gem 'compass-rails'
 gem 'sass-rails' # if running rails 3.1 or greater
 
 group :assets do
+  gem 'sass-rails' # if running rails 3.1 or greater
   gem 'therubyracer'
   gem 'uglifier'
 end
