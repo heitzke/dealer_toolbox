@@ -1,11 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'heroku'
-gem 'sqlite3'
+#gem 'sqlite3','~> 1.3.5'
 gem 'rails', '~> 3.1.0'
 gem 'haml', '~> 3.1.3'
-#gem 'pg'
-gem 'sqlite3'
+gem 'pg'
 gem 'jquery-rails'
 gem 'will_paginate'
 gem "paperclip", "~> 2.7"
