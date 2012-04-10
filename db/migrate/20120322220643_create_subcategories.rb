@@ -3,7 +3,7 @@ class CreateSubcategories < ActiveRecord::Migration
     create_table :subcategories do |t|
       t.string :name
       t.string :description
-      t.string :category_id
+      t.integer :category_id
     end
 
   end
