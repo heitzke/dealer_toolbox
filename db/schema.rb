@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120327023302) do
   create_table "subcategories", :force => true do |t|
     t.string "name"
     t.string "description"
-    t.string "category_id"
+    t.integer "category_id"
   end
 
   create_table "users", :force => true do |t|
