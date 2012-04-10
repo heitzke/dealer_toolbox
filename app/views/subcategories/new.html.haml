@@ -1,9 +1,14 @@
 %h2 New Subcategory
-= form_for @subcategory do |f|
+= form_for @subcategory, :html => {:class => 'form-horizontal'} do |f|
   = f.hidden_field :category_id, :value => @category.id
-  = f.label :name
-  = f.text_field :name
-  = f.label :description
-  = f.text_field :description
-  = f.submit
-
+  %fieldset
+    .control-group
+      = f.label :name, :class => 'control-label'
+      .controls
+        = f.text_field :name
+    .control-group
+      = f.label :description, :class => 'control-label'
+      .controls
+        = f.text_field :description
+    .form-actions
+      = f.submit :class => 'btn btn-info'

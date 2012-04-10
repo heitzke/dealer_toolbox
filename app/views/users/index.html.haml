@@ -1,6 +1,8 @@
 = link_to 'New User', new_user_path, :class => 'btn btn-info right'
 %h2 Listing users
-#notice= notice
+- if alert.present?
+  .alert.alert-success
+    = notice
 %table.table.table-striped.table-bordered
   %thead
     %tr

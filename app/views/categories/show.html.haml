@@ -1,8 +1,9 @@
 - if current_user && current_user.is_admin?
   = link_to 'New Folder', new_category_subcategory_path(@category), :class => 'btn btn-info right'
 %h2= @category.name
-.notice
-  %p= notice
+- if notice.present?
+  .alert.alert-success
+    = notice
 
 - @category.subcategories.each do |subcategory|
   .subcategory_wrap
