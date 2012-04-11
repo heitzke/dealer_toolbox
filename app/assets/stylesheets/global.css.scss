@@ -44,13 +44,17 @@ header {
     font-family: 'arial', 'helvetica', sans-serif;
     font-size: 1.4em;
     vertical-align: middle;
-    margin: 0 0 0 6px;
+    margin: 0 0 0 83px;
   }
   .navbar {
     margin: 0;
-    @include box-shadow (0 0 4px #000);
+    display:block;
+    width: 100%;
+    float: left;
+    @include box-shadow (0 1px 3px #444);
     .navbar-inner {
-      border-top: 2px solid #323232;
+      border-top: 3px solid #323232;
+      border-bottom: 3px solid #444;
       @include background-image(linear-gradient(#444343, #525252)); 
       height: 34px;
       border-radius: 0;
@@ -60,9 +64,10 @@ header {
         display: inline-block;
         padding: 6px 10px 9px 10px;
         font-family: 'arial', 'helvetica', sans-serif;
+        @include text-shadow(1px 1px 1px #333);
         &:hover {
           @include background-image(linear-gradient(#eee, #fff)); 
-          
+          text-shadow: none;
           background-color: #ededed;
           text-decoration: none;
           color: #434242;
@@ -102,6 +107,7 @@ header {
     background: url('bg_texture.png') repeat;
     height: 100%;
     padding: 20px 0;
+    border-bottom: 2px solid #444;
   }
   h2 {
     font-size: 2.1em;
@@ -110,7 +116,7 @@ header {
     margin: 0 0 15px 0;
     color: #fff;
     @include text-shadow(1px 1px 1px #555);
-    font-weight: normal;
+    font-weight: bold;
   }
 }
 table {
@@ -128,6 +134,11 @@ form {
   margin-top: 10px;
   label {
     color: #fff;
+  }
+  input {
+    @include background-image(linear-gradient(#e6e6e6, #fefefe)); 
+    @include box-shadow(1px 1px 3px #555);
+    
   }
   .field_with_errors {
     input {
@@ -182,8 +193,10 @@ form {
   }
 }
 .home_content {
+  @include background-image(linear-gradient(#aaa, #888)); 
+  @include box-shadow(1px 1px 1px #333);
   margin: 15px 0;
-  border-top:1px solid #666;
+  padding: 15px;
   .about {
     width: 64%;
     margin: 0 15px 0 0;
@@ -281,7 +294,9 @@ footer {
     
   }
 }
-
+#user_session_remember_me {
+  margin: -10px 0 0 0;
+}
 .orbit-wrapper{
   div.slider-nav span{
     @include opacity(0);

@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    = stylesheet_link_tag "base.css"
+    = stylesheet_link_tag "screen"
     = javascript_include_tag "application"
     = csrf_meta_tags
     %title Distributor Toolbox
@@ -11,7 +11,7 @@
         %h1.logo
           = link_to 'Scania', '/'
         %h2
-          Distributor Toolbox
+          Scania U.S.A Inc Distributor Toolbox
         - if current_user
           .welcome_back
             %p= "Welcome back #{current_user.email}"
@@ -24,6 +24,8 @@
               - if current_user
                 - categories.each do |category|
                   = link_to category.name, category_path(category)
+                %a{:href => "mailto:Contact@scaniausainc.com"}
+                  Contact
                 - if current_user.is_admin?
                   .admin_link
                     = link_to "Manage Users", users_path
