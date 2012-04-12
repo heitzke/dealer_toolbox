@@ -3,15 +3,21 @@
 
 # main details
 set :application, "dealer_toolbox"
-role :web, "localhost"
-role :app, "localhost"
-role :db, "localhost", :primary => true
+#role :web, "127.0.0.1"
+#role :app, "127.0.0.1"
+#role :db, "127.0.0.1", :primary => true
+role :web, "108.171.191.103"
+role :app, "108.171.191.103"
+role :db, "108.171.191.103", :primary => true
+
 
 # server details
 #default_run_options[:pty] = true
 #ssh_options[:forward_agent] = true
-set :deploy_to, "/home/robby/dealer_toolbox"
-set :user, "robby"
+#set :deploy_to, "/home/robby/dealer_toolbox"
+set :deploy_to, "/home/deployer/dealer_toolbox"
+#set :user, "robby"
+set :user, "deployer"
 set :use_sudo, true
 
 # repo details
@@ -43,7 +49,7 @@ namespace :deploy do
 
   desc "Symlink shared resources on each release"
   task :symlink_shared, :roles => :app do
-    #run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/database.yml #{release_path}/config/database.yml"
   end
 end
 
