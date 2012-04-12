@@ -5,4 +5,3 @@
 // the compiled file.
 //
 //= require jquery
-//= require jquery.orbit-1.3.0
