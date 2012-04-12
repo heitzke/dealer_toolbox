@@ -16,8 +16,8 @@
       
 .home_headings
   %h3 News
-  %h3 About
-  %h3 Links
+  %h3.about About
+  %h3.links Links
 .home_content
   .content_block
     %ul
@@ -32,9 +32,12 @@
     %p It is seen a complement to SAIL.
   .content_block
     %ul
-      %li SAIL
-      %li Scaniausa.com
-      %li Scania.com
+      %li 
+        = link_to 'SAIL', 'https://sail.scania.com'
+      %li 
+        = link_to 'Scaniausa.com', 'http://www.scaniausa.com'
+      %li 
+        = link_to 'Scania.com', 'http://www.scania.com'
 
 
 

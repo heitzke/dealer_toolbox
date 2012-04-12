@@ -191,24 +191,60 @@ form {
   .next_page {
     display: inline-block;
   }
+}  
+.home_headings {
+  margin: 5px 0 0 0;
+  border-bottom: 3px solid #aaa;
+  padding: 0 0 7px 0;
+  
+  h3 {
+    color: #fff;
+    font-size: 1.6em;
+    @include text-shadow(1px 1px 1px #555);
+    display: inline-block;
+  }
+  .about {
+    width: 30%;
+    text-align: right;
+  }
+  .links {
+    text-align: right;
+    width: 41%;
+    
+  }
 }
+
 .home_content {
   @include background-image(linear-gradient(#aaa, #888)); 
   @include box-shadow(1px 1px 1px #333);
-  margin: 15px 0;
+  margin: 5px 0 15px 0;
   padding: 15px;
-  .about {
-    width: 64%;
-    margin: 0 15px 0 0;
+  .content_block.about {
+    width: 42%;
+    margin: 0 15px;
   }
   .content_block {
     display: inline-block;
     vertical-align: top;
+    width: 27%;
+    ul {
+      margin: 0 0 9px 0;
+      li {
+        padding: 0 0 5px 0;
+        list-style: none;
+        text-decoration: underline;
+        a {
+          text-decoration: underline;
+          color: #333;
+        }
+      }
+    }
     h3 {
       color: #fff;
     }
     p {
-      color: #eee;
+      color: #373737;
+      font-size: 1em;
     }
   }
 }
