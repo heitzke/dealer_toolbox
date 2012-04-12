@@ -10,7 +10,7 @@ role :db, "localhost", :primary => true
 # server details
 #default_run_options[:pty] = true
 #ssh_options[:forward_agent] = true
-set :deploy_to, "/var/www/dealer_toolbox"
+set :deploy_to, "/home/robby/dealer_toolbox"
 set :user, "robby"
 set :use_sudo, true
 
@@ -38,7 +38,7 @@ namespace :deploy do
 
   desc "Restart Application"
   task :restart, :roles => :app do
-    #run "touch #{current_path}/tmp/restart.txt"
+    run "touch #{current_path}/tmp/restart.txt"
   end
 
   desc "Symlink shared resources on each release"
