@@ -6,7 +6,7 @@ gem 'haml', '~> 3.1.3'
 gem 'mysql2'
 gem 'capistrano'
 gem 'passenger'
-gem 'jquery-rails'
+gem 'jquery-rails', '~>1.0.5'
 gem 'will_paginate'
 gem "paperclip", "~> 2.7"
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
