@@ -8,7 +8,7 @@
     %p= notice
 
 
-%table.table.table-striped.table-bordered
+%table.table.table-striped.table-bordered.datatables
   %thead
     %tr
       %th File Name
@@ -24,3 +24,8 @@
         %td= link_to file_attachment.attachment_file_updated_at, file_attachment_path(file_attachment.id)
 
 = will_paginate @file_attachments
+
+:javascript 
+  $(document).ready(function() {
+    $('.datatables').dataTable();
+  } );
