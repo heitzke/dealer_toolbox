@@ -35,7 +35,7 @@ namespace :deploy do
   before 'deploy:setup', :db
 
   task :start, :roles => :app do
-    #run "touch #{current_path}/tmp/restart.txt"
+    run "touch #{current_path}/tmp/restart.txt"
   end
 
   task :stop, :roles => :app do
@@ -50,7 +50,8 @@ namespace :deploy do
   desc "Symlink shared resources on each release"
   task :symlink_shared, :roles => :app do
     run "ln -nfs #{shared_path}/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/system/attachment_files #{release_path}/public/system/attachment_files"
   end
 end
 
-#after 'deploy:symlink_shared'
+after 'deploy', 'deploy:symlink_shared'
