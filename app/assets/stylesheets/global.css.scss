@@ -1,3 +1,13 @@
+header
+,nav
+,section
+,article
+,aside
+,footer
+,hgroup 
+{ 
+display: block;
+}
 
 html {
   background: #171717;
@@ -10,6 +20,7 @@ html {
 header {
   height: 122px;
   background: url('header_bg.png') repeat;
+  display: block;
   .welcome_back {
     display: inline-block;
     float: right;
@@ -21,6 +32,7 @@ header {
     }
     .logout {
       @include background-image(linear-gradient(#76b1d7, #4d8fba, #215c82 ));
+      background-color: #76b1d7;
       border: 1px solid #3691cc;
       color:#fff;
       display: inline-block;
@@ -56,6 +68,7 @@ header {
       border-top: 3px solid #323232;
       border-bottom: 3px solid #444;
       @include background-image(linear-gradient(#444343, #525252)); 
+      background-color: #444343;
       height: 34px;
       border-radius: 0;
       a {
@@ -67,6 +80,7 @@ header {
         @include text-shadow(1px 1px 1px #333);
         &:hover {
           @include background-image(linear-gradient(#eee, #fff)); 
+          background-color: #fff;
           text-shadow: none;
           background-color: #ededed;
           text-decoration: none;
@@ -90,7 +104,6 @@ header {
   padding: 15px 0;
   margin: 15px 30px 10px 0;
   @include box-shadow(3px 3px 3px #444);
-
   a {
     color: #fff;
     font-size: 1.2em;
@@ -103,6 +116,7 @@ header {
 }
 .main_content {
   @include background-image(linear-gradient(#909090, #3f3f3f));
+  background-color: #909090;
   .texture {
     background: url('bg_texture.png') repeat;
     height: 100%;
@@ -138,7 +152,7 @@ form {
   input {
     @include background-image(linear-gradient(#e6e6e6, #fefefe)); 
     @include box-shadow(1px 1px 3px #555);
-    
+    background-color: #e6e6e6;
   }
   .field_with_errors {
     input {
@@ -209,18 +223,19 @@ form {
   }
   .links {
     text-align: right;
-    width: 41%;
+    width: 40%;
     
   }
 }
 
 .home_content {
   @include background-image(linear-gradient(#aaa, #888)); 
+  background-color: #aaa;
   @include box-shadow(1px 1px 1px #333);
   margin: 5px 0 15px 0;
   padding: 15px;
   .content_block.about {
-    width: 42%;
+    width: 41%;
     margin: 0 15px;
   }
   .content_block {
