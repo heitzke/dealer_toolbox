@@ -14,7 +14,7 @@
           Scania U.S.A Inc Distributor Toolbox
         - if current_user
           .welcome_back
-            %p= "Welcome back #{current_user.email}"
+            %p= "Welcome back #{current_user.username}"
             = link_to "Logout", :logout, :class => 'btn btn-info'
       .navbar
         .navbar-inner

@@ -53,5 +53,4 @@ namespace :deploy do
   end
 end
 
-#before 'deploy:assets:precompile', 'deploy:symlink_shared'
-#before 'deploy:symlink_shared'
+#after 'deploy:symlink_shared'
