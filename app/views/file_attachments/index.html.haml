@@ -1,7 +1,3 @@
-- if current_user && current_user.is_admin?
-  = link_to t(:upload_file), new_category_subcategory_file_attachment_path(@subcategory.category, @subcategory), :class => 'btn btn-info right'
-  = link_to t(:delete_file), category_subcategory_file_attachments_path(@subcategory.category, @subcategory), :class => 'btn btn-danger right'
-
 %h2= "Subcategory - #{@subcategory.name}"
 - if notice.present?
   .alert.alert-info.alert-block
@@ -16,6 +12,7 @@
       %th File Size
       %th File Type
       %th Created Time
+      %th Delete
   %tbody
     - @file_attachments.each do |file_attachment|
       %tr
@@ -23,5 +20,5 @@
         %td= link_to file_attachment.attachment_file_file_size, file_attachment_path(file_attachment.id)
         %td= link_to file_attachment.attachment_file_content_type, file_attachment_path(file_attachment.id)
         %td= link_to file_attachment.attachment_file_updated_at, file_attachment_path(file_attachment.id)
-
+        %td= link_to t(:delete_file), file_attachment, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger'
 = will_paginate @file_attachments
