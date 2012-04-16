@@ -229,7 +229,7 @@ form {
 }
 
 .home_content {
-  @include background-image(linear-gradient(#aaa, #888)); 
+  @include background-image(linear-gradient(#aaa, #ddd)); 
   background-color: #aaa;
   @include box-shadow(1px 1px 1px #333);
   margin: 5px 0 15px 0;
@@ -279,7 +279,7 @@ footer {
 
 
 .slider { 
-	height: 200px;
+	height: 250px;
 	background: url('orbit/loading.gif') no-repeat center center;
 	overflow: hidden;
 	img {
