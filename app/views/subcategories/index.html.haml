@@ -1,1 +1,16 @@
-Subcategories
+%h2 Subcategories
+
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Subcategory
+      %th Description
+      %th
+      %th
+  %tbody
+    - @subcategories.each do |subcategory|
+      %tr
+        %td= subcategory.name
+        %td.centered= link_to 'View', category_subcategory_path(subcategory.category, subcategory), :class => 'btn btn-info'
+        %td.centered= link_to 'Remove', subcategory, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger'
+

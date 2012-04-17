@@ -1,5 +1,6 @@
 - if current_user && current_user.is_admin?
   = link_to 'New Folder', new_category_subcategory_path(@category), :class => 'btn btn-info right'
+  = link_to 'Delete Folders', subcategories_path(:category_id => params[:id]), :class => 'btn btn-danger right'
 %h2= @category.name
 - if notice.present?
   .alert.alert-success

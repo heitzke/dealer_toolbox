@@ -3,7 +3,7 @@ class SubcategoriesController < ApplicationController
   before_filter :require_admin, :only => [:new, :create, :update]
 
   def index
-    @subcategories = Subcategory.all
+    @subcategories = Subcategory.find_all_by_category_id(params[:category_id])
   end
 
   def new
@@ -37,6 +37,14 @@ class SubcategoriesController < ApplicationController
       flash[:error] = 'Subcategory Not Saved'
       render :action => 'new'
     end
+  end
+
+  def destroy
+    @subcategory = Subcategory.find(params[:id])
+    @category = @subcategory.category
+    @subcategory.destroy
+    flash[:notice] = "Folder Deleted!"
+    redirect_to category_subcategories_path(@category, @subcategory)
   end
 
 
