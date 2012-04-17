@@ -2720,9 +2720,10 @@ input[type="submit"].btn.btn-mini {
 
 .alert-danger,
 .alert-error {
-  background-color: #be2222;
-  border-color: #f20000;
+  background-color: #444;
+  border-color: #333;
   color: #fff;
+  @include box-shadow(1px 1px 3px #111);
 }
 
 .alert-info {
