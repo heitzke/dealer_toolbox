@@ -23,7 +23,7 @@ set :use_sudo, true
 # repo details
 set :scm, :git
 set :git_username, "rclements"
-set :repository, "git://github.com/rclements/dealer_toolbox.git"
+set :repository, "git@github.com:rclements/dealer_toolbox.git"
 set :branch, "master"
 #set :git_enable_submodules, 1
 
