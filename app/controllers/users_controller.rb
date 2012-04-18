@@ -30,9 +30,14 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id]) # makes our views "cleaner" and more consistent
+    if params[:user][:password_confirmation] == ''
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+    end
+
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
-      redirect_to account_url
+      redirect_to users_path
     else
       render :action => :edit
     end
