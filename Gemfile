@@ -14,6 +14,7 @@ gem 'rails3-generators'
 gem 'compass-bootstrap'
 gem 'compass-rails'
 gem 'sass-rails', '3.1.5' # if running rails 3.1 or greater
+gem 'ruby-debug19'
 
 group :assets do
   gem 'sass-rails', '3.1.5' # if running rails 3.1 or greater

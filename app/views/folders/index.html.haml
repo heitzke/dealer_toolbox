@@ -1,0 +1,16 @@
+%h2 Folders
+
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Folder
+      %th Description
+      %th
+      %th
+  %tbody
+    - @folders.each do |folder|
+      %tr
+        %td= folder.name
+        %td.centered= link_to 'View', category_subcategory_folder_path(folder.subcategory.category, folder.subcategory, folder), :class => 'btn btn-info'
+        %td.centered= link_to 'Remove', folder, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger'
+

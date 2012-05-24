@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327023302) do
+ActiveRecord::Schema.define(:version => 20120508032703) do
 
   create_table "categories", :force => true do |t|
     t.string "name"
@@ -25,12 +25,21 @@ ActiveRecord::Schema.define(:version => 20120327023302) do
     t.datetime "attachment_file_updated_at"
     t.string   "name"
     t.integer  "subcategory_id"
+    t.integer  "folder_id"
+  end
+
+  create_table "folders", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "subcategory_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "subcategories", :force => true do |t|
-    t.string  "name"
-    t.string  "description"
-    t.integer "category_id"
+    t.string "name"
+    t.string "description"
+    t.string "category_id"
   end
 
   create_table "users", :force => true do |t|

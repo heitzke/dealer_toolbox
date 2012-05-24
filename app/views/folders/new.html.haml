@@ -1,0 +1,14 @@
+%h2 New Folder
+= form_for @folder, :html => {:class => 'form-horizontal'} do |f|
+  = f.hidden_field :subcategory_id, :value => @subcategory.id
+  %fieldset
+    .control-group
+      = f.label :name, :class => 'control-label'
+      .controls
+        = f.text_field :name
+    .control-group
+      = f.label :description, :class => 'control-label'
+      .controls
+        = f.text_field :description
+    .form-actions
+      = f.submit :class => 'btn btn-info'

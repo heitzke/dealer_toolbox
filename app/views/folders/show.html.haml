@@ -1,0 +1,27 @@
+- if current_user && current_user.is_admin?
+  = link_to t(:upload_file), new_category_subcategory_folder_file_attachment_path(@folder.subcategory.category, @folder.subcategory, @folder), :class => 'btn btn-info right'
+  = link_to t(:delete_file), category_subcategory_folder_file_attachments_path(@folder.subcategory.category, @folder.subcategory, @folder), :class => 'btn btn-danger right'
+
+%h2= "Folder - #{@folder.name}"
+- if notice.present?
+  .alert.alert-info.alert-block
+    <a class="close" data-dismiss="alert">×</a>
+    %p= notice
+
+
+%table.table.table-striped.table-bordered.datatables
+  %thead
+    %tr
+      %th File Name
+      %th File Size
+      %th File Type
+      %th Created Time
+  %tbody
+    - @file_attachments.each do |file_attachment|
+      %tr
+        %td= link_to file_attachment.attachment_file_file_name, file_attachment_path(file_attachment.id)
+        %td= link_to file_attachment.attachment_file_file_size, file_attachment_path(file_attachment.id)
+        %td= link_to file_attachment.attachment_file_content_type, file_attachment_path(file_attachment.id)
+        %td= link_to file_attachment.attachment_file_updated_at, file_attachment_path(file_attachment.id)
+
+= will_paginate @file_attachments

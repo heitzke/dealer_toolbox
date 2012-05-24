@@ -1,4 +1,7 @@
-%h2= "Subcategory - #{@subcategory.name}"
+- if @folder.present?
+  %h2= "Folder - #{@folder.name}"
+- else
+  %h2= "Subcategory - #{@subcategory.name}"
 - if notice.present?
   .alert.alert-info.alert-block
     <a class="close" data-dismiss="alert">×</a>

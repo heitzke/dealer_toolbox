@@ -24,6 +24,7 @@ class SubcategoriesController < ApplicationController
 
   def show
     @subcategory = Subcategory.find(params[:id])
+    @folders = @subcategory.folders
     @file_attachments = @subcategory.file_attachments
     @file_attachments = @file_attachments.paginate(:per_page => 20, :page => params[:page])
   end

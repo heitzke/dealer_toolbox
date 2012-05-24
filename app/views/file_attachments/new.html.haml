@@ -2,6 +2,9 @@
 
 = form_for @file_attachment, :url => file_attachments_path, :html => { :class => 'well form-inline', :multipart => true } do |f|
   = f.file_field :attachment_file, :class => 'input-small'
-  = f.hidden_field :subcategory_id, :value => @subcategory.id
+  - if !params[:folder_id].present?
+    = f.hidden_field :subcategory_id, :value => @subcategory.id
+  - if params[:folder_id].present?
+    = f.hidden_field :folder_id, :value => @folder.id
   = f.submit 'Submit'
 

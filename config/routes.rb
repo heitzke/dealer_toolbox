@@ -22,10 +22,14 @@ DealerToolbox::Application.routes.draw do
   resource :user_session
   resources :categories
   resources :subcategories
+  resources :folders
   resources :file_attachments
 
   resources :categories do
     resources :subcategories do
+      resources :folders do
+        resources :file_attachments
+      end
       resources :file_attachments
     end
   end
