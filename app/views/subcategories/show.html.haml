@@ -4,17 +4,6 @@
     <a class="close" data-dismiss="alert">×</a>
     %p= notice
 
-
-- if current_user && current_user.is_admin?
-  = link_to 'New Folder', new_category_subcategory_folder_path(@subcategory.category, @subcategory), :class => 'btn btn-info right'
-  = link_to 'Delete Folders', folders_path(:subcategory_id => params[:id]), :class => 'btn btn-danger right'
-
-- @folders.each do |folder|
-  .subcategory_wrap
-    = link_to image_tag('folder.png'), category_subcategory_folder_path(folder.subcategory.category, folder.subcategory, folder)
-    = link_to folder.name, category_subcategory_path(folder.subcategory.category, folder.subcategory, folder)
-
-
 %table.table.table-striped.table-bordered.datatables
   %thead
     %tr
@@ -31,7 +20,8 @@
         %td= link_to file_attachment.attachment_file_updated_at, file_attachment_path(file_attachment.id)
 
 = will_paginate @file_attachments
-
+.clear
+%hr
 - if current_user && current_user.is_admin?
   = link_to t(:upload_file), new_category_subcategory_file_attachment_path(@subcategory.category, @subcategory), :class => 'btn btn-info right'
   = link_to t(:delete_file), category_subcategory_file_attachments_path(@subcategory.category, @subcategory), :class => 'btn btn-danger right'

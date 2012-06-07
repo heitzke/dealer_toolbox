@@ -6,7 +6,17 @@
   .alert.alert-success
     = notice
 
-- @category.subcategories.each do |subcategory|
-  .subcategory_wrap
-    = link_to image_tag('folder.png'), category_subcategory_path(@category, subcategory)
-    = link_to subcategory.name, category_subcategory_path(@category, subcategory)
+
+
+%table.table.table-striped.table-bordered.datatables
+  %thead
+    %tr
+      %th Folder Name
+      %th Description
+      %th
+  %tbody
+    - @category.subcategories.each do |subcategory|
+      %tr
+        %td= link_to subcategory.name, category_subcategory_path(@category, subcategory)
+        %td= subcategory.description
+        %td.centered= link_to 'View', category_subcategory_path(@category, subcategory), :class => 'btn btn-info'

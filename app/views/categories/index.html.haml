@@ -1,8 +1,19 @@
 %h2 Categories
 
-%ul
-  - @categories.each do |category|
-    %li.category= link_to(category.name, category_path(category))  
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Subcategory
+      %th Description
+      %th
+      %th
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.name
+        %td.centered= link_to 'View', category_path(category), :class => 'btn btn-info'
+        %td.centered= link_to 'Remove', category, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger'
+      
 
 /- if current_user && current_user.is_admin?
 /  = link_to "New Category", { :controller => "categories", :action => "new"}
